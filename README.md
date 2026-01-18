@@ -2,7 +2,7 @@
 
 Integrantes
 
-1 Eynar Pari
-2
-3
-4
+- Eynar Pari
+-
+-
+-
