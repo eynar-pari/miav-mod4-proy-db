@@ -4,6 +4,6 @@
 ##Integrantes
 
 - Eynar Pari
--
+- Marcelo Garay
 -
 -
