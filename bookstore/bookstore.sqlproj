@@ -59,15 +59,12 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Databases" />
-    <Folder Include="ETL" />
-    <Folder Include="OLAP" />
     <Folder Include="Databases\schema" />
     <Folder Include="Databases\schema\tables" />
     <Folder Include="Databases\schema\storeProcedures" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ETL\tmp.txt" />
-    <None Include="OLAP\tmp.txt" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Databases\schema\tables\shipping_method.sql" />
