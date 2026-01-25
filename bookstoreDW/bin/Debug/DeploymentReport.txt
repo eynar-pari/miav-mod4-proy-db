@@ -1,0 +1,43 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [staging] (Schema)
+       [staging].[store] (Table)
+       [staging].[product] (Table)
+       [staging].[customer] (Table)
+       [staging].[staff] (Table)
+       [staging].[orders] (Table)
+       [dbo].[DimCustomer] (Table)
+       [dbo].[DimDate] (Table)
+       [dbo].[DimProduct] (Table)
+       [dbo].[DimStaff] (Table)
+       [dbo].[DimStore] (Table)
+       [dbo].[FactOrders] (Table)
+       [dbo].[PackageConfig] (Table)
+       Default Constraint: unnamed constraint on [dbo].[PackageConfig] (Default Constraint)
+       Foreign Key: unnamed constraint on [dbo].[FactOrders] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[FactOrders] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[FactOrders] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[FactOrders] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[FactOrders] (Foreign Key)
+       [dbo].[DW_MergeDimCustomer] (Procedure)
+       [dbo].[DW_MergeDimProduct] (Procedure)
+       [dbo].[DW_MergeDimStaff] (Procedure)
+       [dbo].[DW_MergeDimStore] (Procedure)
+       [dbo].[DW_MergeFactOrders] (Procedure)
+       [dbo].[GetLastPackageRowVersion] (Procedure)
+       [dbo].[UpdateLastPackageRowVersion] (Procedure)
+       [dbo].[GetLastPackageRowVersion].[MS_Description] (Extended Property)
+       [dbo].[UpdateLastPackageRowVersion].[MS_Description] (Extended Property)
+       [dbo].[PackageConfig].[MS_Description] (Extended Property)
+
+** Supporting actions
