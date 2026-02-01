@@ -1,6 +1,0 @@
-C:\Users\EYNAR\Desktop\MAESTRIA-IA-DB\miav-mod4-proy-db\bookstoreDW\bin\Debug\bookstoreDW.dacpac
-C:\Users\EYNAR\Desktop\MAESTRIA-IA-DB\miav-mod4-proy-db\bookstoreDW\obj\Debug\bookstoreDW.sqlproj.AssemblyReference.cache
-C:\Users\EYNAR\Desktop\MAESTRIA-IA-DB\miav-mod4-proy-db\bookstoreDW\obj\Debug\bookstoreDW.dll
-C:\Users\EYNAR\Desktop\MAESTRIA-IA-DB\miav-mod4-proy-db\bookstoreDW\obj\Debug\bookstoreDW.pdb
-C:\Users\EYNAR\Desktop\MAESTRIA-IA-DB\miav-mod4-proy-db\bookstoreDW\bin\Debug\bookstoreDW.dll
-C:\Users\EYNAR\Desktop\MAESTRIA-IA-DB\miav-mod4-proy-db\bookstoreDW\bin\Debug\bookstoreDW.pdb
