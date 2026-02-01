@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>bookstore</Name>
+    <Name>bookstoreOLTP</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{6998aa6a-62a0-4ef7-8823-fcddc667798f}</ProjectGuid>
@@ -58,39 +58,32 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Databases" />
-    <Folder Include="ETL" />
-    <Folder Include="OLAP" />
-    <Folder Include="Databases\schema" />
-    <Folder Include="Databases\schema\tables" />
-    <Folder Include="Databases\schema\storeProcedures" />
+    <Folder Include="db" />
+    <Folder Include="db\schema" />
+    <Folder Include="db\schema\storeProcedures" />
+    <Folder Include="db\schema\tables" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ETL\tmp.txt" />
-    <None Include="OLAP\tmp.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Databases\schema\tables\shipping_method.sql" />
-    <Build Include="Databases\schema\tables\publisher.sql" />
-    <Build Include="Databases\schema\tables\order_status.sql" />
-    <Build Include="Databases\schema\tables\order_line.sql" />
-    <Build Include="Databases\schema\tables\order_history.sql" />
-    <Build Include="Databases\schema\tables\customer_address.sql" />
-    <Build Include="Databases\schema\tables\customer.sql" />
-    <Build Include="Databases\schema\tables\cust_order.sql" />
-    <Build Include="Databases\schema\tables\country.sql" />
-    <Build Include="Databases\schema\tables\book_language.sql" />
-    <Build Include="Databases\schema\tables\book_author.sql" />
-    <Build Include="Databases\schema\tables\book.sql" />
-    <Build Include="Databases\schema\tables\author.sql" />
-    <Build Include="Databases\schema\storeProcedures\GetShippingMethodChangesByRowVersion.sql" />
-    <Build Include="Databases\schema\storeProcedures\GetDatabaseRowVersion.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Databases\schema\tables\address_status.sql" />
-    <Build Include="Databases\schema\tables\address.sql" />
-    <Build Include="Databases\schema\storeProcedures\GetCustomerChangesByRowVersion.sql" />
-    <Build Include="Databases\schema\storeProcedures\GetBookChangesByRowVersion.sql" />
-    <Build Include="Databases\schema\storeProcedures\GetAddressChangesByRowVersion.sql" />
+    <Build Include="db\schema\storeProcedures\GetAddressChangesByRowVersion.sql" />
+    <Build Include="db\schema\storeProcedures\GetBookChangesByRowVersion.sql" />
+    <Build Include="db\schema\storeProcedures\GetCustomerChangesByRowVersion.sql" />
+    <Build Include="db\schema\storeProcedures\GetDatabaseRowVersion.sql" />
+    <Build Include="db\schema\storeProcedures\GetOrderChangesByRowVersion.sql" />
+    <Build Include="db\schema\storeProcedures\GetShippingMethodChangesByRowVersion.sql" />
+    <Build Include="db\schema\tables\address.sql" />
+    <Build Include="db\schema\tables\address_status.sql" />
+    <Build Include="db\schema\tables\author.sql" />
+    <Build Include="db\schema\tables\book.sql" />
+    <Build Include="db\schema\tables\book_author.sql" />
+    <Build Include="db\schema\tables\book_language.sql" />
+    <Build Include="db\schema\tables\country.sql" />
+    <Build Include="db\schema\tables\cust_order.sql" />
+    <Build Include="db\schema\tables\customer.sql" />
+    <Build Include="db\schema\tables\customer_address.sql" />
+    <Build Include="db\schema\tables\order_history.sql" />
+    <Build Include="db\schema\tables\order_line.sql" />
+    <Build Include="db\schema\tables\order_status.sql" />
+    <Build Include="db\schema\tables\publisher.sql" />
+    <Build Include="db\schema\tables\shipping_method.sql" />
   </ItemGroup>
 </Project>
