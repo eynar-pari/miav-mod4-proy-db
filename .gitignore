@@ -25,6 +25,10 @@ obj/
 *.userosscache
 *.sln.docstates
 
+# SSIS/SSDT user artifacts
+*.dtproj.user
+*.database
+
 # Backup files
 *.bak
 *.log
