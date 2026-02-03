@@ -16,6 +16,9 @@ obj/
 *.dbmdl
 *.sqlcmdvars
 
+# SSDT/SSIS designer artifacts
+*.jfm
+
 # Visual Studio settings
 .vs/
 
@@ -28,6 +31,18 @@ obj/
 # SSIS/SSDT user artifacts
 *.dtproj.user
 *.database
+
+# SSIS build/deploy artifacts
+*.ispac
+
+# Local DB files
+*.mdf
+*.ldf
+
+# Temp/cache
+*.tmp
+*.temp
+*.cache
 
 # Backup files
 *.bak
