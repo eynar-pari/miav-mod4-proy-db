@@ -10,7 +10,7 @@
       <Build />
       <Deploy />
     </Project>
-    <Project Path="bookstoreOLTP.sqlproj" Id="6998aa6a-62a0-4ef7-8823-fcddc667798f">
+    <Project Path="bookstoreOLTP/bookstoreOLTP.sqlproj" Id="6998aa6a-62a0-4ef7-8823-fcddc667798f">
       <BuildType Solution="Development|*" Project="Release" />
       <Build />
       <Deploy />

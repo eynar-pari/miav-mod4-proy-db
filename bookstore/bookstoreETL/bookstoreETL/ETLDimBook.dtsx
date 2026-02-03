@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ETLDimBook"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{2C9B590B-F00C-41DF-80FE-3DCA78E7519E}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{20F980DD-C8C8-40EB-BACE-BE3EE4643B72}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-PQJTNQCA;Initial Catalog=BookstoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{18E21D3F-3761-43E5-A878-2B63EE296808}Destination.BookstoreDW;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=BookstoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{18E21D3F-3761-43E5-A878-2B63EE296808}Destination.BookstoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-PQJTNQCA;Initial Catalog=Bookstore;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{B9AAE1C2-02D2-4E58-8FB7-4EAAFEA520C2}Source.Bookstore;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Bookstore;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{B9AAE1C2-02D2-4E58-8FB7-4EAAFEA520C2}Source.Bookstore;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1133,55 +1133,55 @@ where [refTable].[BookID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Add New Book"
           TopLeft="383,315" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Get Database Last Change"
-          TopLeft="370,61" />
+          TopLeft="370.833333287802,62.73333332128" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Get Last Book change"
           TopLeft="364,146" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Initialize staging table"
           TopLeft="377,235" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Sync Book Data"
           TopLeft="388,393" />
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\Update LastRowVersion"
           TopLeft="384,472" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="472,103">
+          TopLeft="472.833333287802,104.33333332128">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17,43"
+              EndConnector="-17.633333287802,41.66666667872"
               Start="0,0"
-              End="-17,35.5">
+              End="-17.633333287802,34.16666667872">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,16.83333333936" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="-4,21.5" />
+                    Point1="0,16.83333333936"
+                    Point2="0,20.83333333936"
+                    Point3="-4,20.83333333936" />
                   <mssgle:LineSegment
-                    End="-13,21.5" />
+                    End="-13.633333287802,20.83333333936" />
                   <mssgle:CubicBezierSegment
-                    Point1="-13,21.5"
-                    Point2="-17,21.5"
-                    Point3="-17,25.5" />
+                    Point1="-13.633333287802,20.83333333936"
+                    Point2="-17.633333287802,20.83333333936"
+                    Point3="-17.633333287802,24.83333333936" />
                   <mssgle:LineSegment
-                    End="-17,35.5" />
+                    End="-17.633333287802,34.16666667872" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

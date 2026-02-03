@@ -4,8 +4,9 @@ CREATE PROCEDURE [dbo].[GetLastPackageRowVersion]
 )
 AS
 BEGIN
-	SELECT LastRowVersion
-	FROM [dbo].[PackageConfig]
-	WHERE TableName = @tableName;
+	SELECT COALESCE(
+		(SELECT LastRowVersion FROM [dbo].[PackageConfig] WHERE TableName = @tableName),
+		0
+	) AS LastRowVersion;
 END
 GO
