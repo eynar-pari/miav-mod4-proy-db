@@ -4,6 +4,7 @@
 -- Inicializar configuración para tablas dimensionales
 INSERT INTO dbo.PackageConfig (TableName, LastRowVersion, LastLoadDate, IsActive)
 VALUES 
+    ('DimBook', 0, NULL, 1),
     ('DimCustomer', 0, NULL, 1),
     ('DimProduct', 0, NULL, 1),
     ('DimStaff', 0, NULL, 1),

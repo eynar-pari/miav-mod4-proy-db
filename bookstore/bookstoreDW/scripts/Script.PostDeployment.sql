@@ -11,4 +11,5 @@ Post-Deployment Script Template for bookstoreDW
 */
 
 :r .\DimDate.data.sql
+:r .\PackageConfig.data.sql
 -- Agrega aquí otros scripts de carga si los necesitas

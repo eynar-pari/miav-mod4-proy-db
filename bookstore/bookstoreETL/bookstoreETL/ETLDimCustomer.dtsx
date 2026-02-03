@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-PQJTNQCA;Initial Catalog=BookstoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{C451F62E-C74F-4D70-97A3-6ED814871955}Destination.BookstoreDW;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookstoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{C451F62E-C74F-4D70-97A3-6ED814871955}Destination.BookstoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-PQJTNQCA;Initial Catalog=Bookstore;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{64D75BD9-6CBE-45E9-879D-FF7A31472734}Source.Bookstore;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Bookstore;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DimCustomer-{64D75BD9-6CBE-45E9-879D-FF7A31472734}Source.Bookstore;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
