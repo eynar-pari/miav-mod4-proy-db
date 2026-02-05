@@ -31,3 +31,5 @@ Base de datos elegida: `Bookstore.bak`.
 - Marcelo Garay
 - Sheyla Camila Carrillo
 - Agustin Acebo Pedraza
+
+https://proyecto-bookstore-bi-p324eqw.gamma.site/
