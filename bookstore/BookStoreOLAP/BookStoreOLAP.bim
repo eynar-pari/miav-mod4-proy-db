@@ -1,0 +1,747 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer laptop-aux bookstoreDW",
+        "connectionString": "Provider=SQLOLEDB;Data Source=laptop-aux;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=bookstoreDW",
+        "impersonationMode": "impersonateAccount",
+        "account": "laptop-aux\\agustin",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimBook",
+        "columns": [
+          {
+            "name": "BookKey",
+            "dataType": "int64",
+            "sourceColumn": "BookKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BookID",
+            "dataType": "int64",
+            "sourceColumn": "BookID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AuthorNames",
+            "dataType": "string",
+            "sourceColumn": "AuthorNames",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ISBN13",
+            "dataType": "string",
+            "sourceColumn": "ISBN13",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LanguageName",
+            "dataType": "string",
+            "sourceColumn": "LanguageName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "NumPages",
+            "dataType": "int64",
+            "sourceColumn": "NumPages",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PublicationDate",
+            "dataType": "string",
+            "sourceColumn": "PublicationDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PublisherName",
+            "dataType": "string",
+            "sourceColumn": "PublisherName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsActive",
+            "dataType": "boolean",
+            "sourceColumn": "IsActive",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "string",
+            "sourceColumn": "StartDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "string",
+            "sourceColumn": "EndDate",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimBook",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimBook].*   FROM [dbo].[DimBook] ",
+              "dataSource": "SqlServer laptop-aux bookstoreDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimBook].*   FROM [dbo].[DimBook] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimBook"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomerID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FirstName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "LastName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Email",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "IsActive",
+            "dataType": "boolean",
+            "isHidden": true,
+            "sourceColumn": "IsActive",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "StartDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "EndDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "CustomerFullName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "  CONCATENATE(  CONCATENATE( Customer[FirstName], \" \") ,Customer[LastName])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCustomer",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] ",
+              "dataSource": "SqlServer laptop-aux bookstoreDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimCustomer"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Date",
+            "dataType": "string",
+            "sourceColumn": "Date",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "int64",
+            "sourceColumn": "Quarter",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Month",
+            "dataType": "int64",
+            "sourceColumn": "Month",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Day",
+            "dataType": "int64",
+            "sourceColumn": "Day",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "WeekOfYear",
+            "dataType": "int64",
+            "sourceColumn": "WeekOfYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IsWeekend",
+            "dataType": "boolean",
+            "sourceColumn": "IsWeekend",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] ",
+              "dataSource": "SqlServer laptop-aux bookstoreDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "FactOrders",
+        "columns": [
+          {
+            "name": "OrderKey",
+            "dataType": "int64",
+            "sourceColumn": "OrderKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OrderLineID",
+            "dataType": "int64",
+            "sourceColumn": "OrderLineID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OrderID",
+            "dataType": "int64",
+            "sourceColumn": "OrderID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BookKey",
+            "dataType": "int64",
+            "sourceColumn": "BookKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Price",
+            "dataType": "double",
+            "sourceColumn": "Price",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "GrossSales",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "FactOrders[Quantity] * FactOrders[Price]"
+          },
+          {
+            "type": "calculated",
+            "name": "NetSales",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "FactOrders[Quantity] * FactOrders[Price]"
+          },
+          {
+            "type": "calculated",
+            "name": "UnitPrice",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "FactOrders[Price]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactOrders",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FactOrders].*   FROM [dbo].[FactOrders] ",
+              "dataSource": "SqlServer laptop-aux bookstoreDW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "TotalVentasBruto",
+            "expression": " SUM(FactOrders[GrossSales])"
+          },
+          {
+            "name": "TotalVentasNetas",
+            "expression": " SUM(FactOrders[NetSales])"
+          },
+          {
+            "name": "TotalLibrosVendidos",
+            "expression": " SUM(FactOrders[Quantity])"
+          },
+          {
+            "name": "TotalOrdenes",
+            "expression": " DISTINCTCOUNT(FactOrders[OrderID])"
+          },
+          {
+            "name": "PromedioVentaPorOrden",
+            "expression": " DIVIDE([TotalVentasNetas], [TotalOrdenes], 0)"
+          },
+          {
+            "name": "PrecioPromedioUnitario",
+            "expression": " AVERAGE(FactOrders[UnitPrice])"
+          },
+          {
+            "name": "LibrosPorOrden",
+            "expression": " DIVIDE([TotalLibrosVendidos], [TotalOrdenes], 0)"
+          },
+          {
+            "name": "CantidadTitulosDistintos", 
+            "expression": " DISTINCTCOUNT(DimBook[Title])"
+          },
+          {
+            "name": "CantidadAutores",
+            "expression": " DISTINCTCOUNT(DimBook[AuthorNames])"
+          },
+          {
+            "name": "TotalClientes",
+            "expression": " DISTINCTCOUNT(FactOrders[CustomerKey])"
+          },
+          {
+            "name": "VentaPromedioPorCliente",
+            "expression": " DIVIDE([TotalVentasNetas], [TotalClientes], 0)"
+          },
+          {
+            "name": "OrdenesPromedioPorCliente",
+            "expression": " DIVIDE([TotalOrdenes], [TotalClientes], 0)"
+          },
+          {
+            "name": "VentasAñoAnterior",
+            "expression": " CALCULATE([TotalVentasNetas], DimDate[Year] = MAX(DimDate[Year]) - 1) + 0"
+          },
+          {
+            "name": "CrecimientoVentas",
+            "expression": " [TotalVentasNetas] - [VentasAñoAnterior]"
+          },
+          {
+            "name": "PorcentajeCrecimiento",
+            "expression": " DIVIDE([CrecimientoVentas], [VentasAñoAnterior], 0)"
+          },
+          {
+            "name": "TicketPromedio",
+            "expression": " DIVIDE([TotalVentasNetas], [TotalOrdenes], 0)"
+          },
+          {
+            "name": "LibroMasVendido",
+            "expression": " CALCULATE(MAX(DimBook[Title]), TOPN(1, DimBook, [TotalLibrosVendidos], DESC))"
+          },
+          {
+            "name": "VentasPorLibro",
+            "expression": " DIVIDE([TotalVentasNetas], [CantidadTitulosDistintos], 0)"
+          },
+          {
+            "name": "IngresoPromedioPorLibro",
+            "expression": " DIVIDE([TotalVentasNetas], [TotalLibrosVendidos], 0)"
+          },
+          {
+            "name": "ClientesActivos",
+            "expression": " CALCULATE(DISTINCTCOUNT(FactOrders[CustomerKey]), Customer[IsActive])"
+          },
+          {
+            "name": "LibrosActivos",
+            "expression": " CALCULATE(DISTINCTCOUNT(FactOrders[BookKey]), DimBook[IsActive])"
+          },
+          {
+            "name": "TotalLineasOrden",
+            "expression": " COUNT(FactOrders[OrderLineID])"
+          },
+          {
+            "name": "PromedioLineasPorOrden",
+            "expression": " DIVIDE([TotalLineasOrden], [TotalOrdenes], 0)"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FactOrders].*   FROM [dbo].[FactOrders] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactOrders"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "3fee8c4b-db5d-4cde-8a2a-54b9ba59a026",
+        "fromTable": "FactOrders",
+        "fromColumn": "BookKey",
+        "toTable": "DimBook",
+        "toColumn": "BookKey"
+      },
+      {
+        "name": "cbbad97d-4621-40a2-871d-a4aa6b038407",
+        "fromTable": "FactOrders",
+        "fromColumn": "CustomerKey",
+        "toTable": "Customer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "743cf340-3865-4262-8b73-e9be8e48f9de",
+        "fromTable": "FactOrders",
+        "fromColumn": "DateKey",
+        "toTable": "DimDate",
+        "toColumn": "DateKey"
+      }
+    ],
+    "perspectives": [
+      {
+        "name": "Ventas",
+        "tables": [
+          {
+            "name": "Customer",
+            "columns": [
+              {
+                "name": "CustomerFullName"
+              }
+            ]
+          },
+          {
+            "name": "DimDate",
+            "columns": [
+              {
+                "name": "Year"
+              },
+              {
+                "name": "MonthName"
+              },
+              {
+                "name": "Quarter"
+              }
+            ]
+          },
+          {
+            "name": "DimBook",
+            "columns": [
+              {
+                "name": "Title"
+              },
+              {
+                "name": "AuthorNames"
+              },
+              {
+                "name": "PublisherName"
+              }
+            ]
+          },
+          {
+            "name": "FactOrders",
+            "measures": [
+              {
+                "name": "TotalVentasNetas"
+              },
+              {
+                "name": "TotalOrdenes"
+              },
+              {
+                "name": "TotalLibrosVendidos"
+              },
+              {
+                "name": "PromedioVentaPorOrden"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Análisis de Clientes",
+        "tables": [
+          {
+            "name": "Customer",
+            "columns": [
+              {
+                "name": "CustomerFullName"
+              }
+            ]
+          },
+          {
+            "name": "DimDate",
+            "columns": [
+              {
+                "name": "Year"
+              },
+              {
+                "name": "Quarter"
+              },
+              {
+                "name": "MonthName"
+              }
+            ]
+          },
+          {
+            "name": "FactOrders",
+            "measures": [
+              {
+                "name": "TotalClientes"
+              },
+              {
+                "name": "VentaPromedioPorCliente"
+              },
+              {
+                "name": "OrdenesPromedioPorCliente"
+              },
+              {
+                "name": "TotalVentasNetas"
+              },
+              {
+                "name": "ClientesActivos"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Análisis de Libros",
+        "tables": [
+          {
+            "name": "DimBook",
+            "columns": [
+              {
+                "name": "Title"
+              },
+              {
+                "name": "AuthorNames"
+              },
+              {
+                "name": "PublisherName"
+              },
+              {
+                "name": "LanguageName"
+              }
+            ]
+          },
+          {
+            "name": "DimDate",
+            "columns": [
+              {
+                "name": "Year"
+              },
+              {
+                "name": "MonthName"
+              }
+            ]
+          },
+          {
+            "name": "FactOrders",
+            "measures": [
+              {
+                "name": "TotalLibrosVendidos"
+              },
+              {
+                "name": "LibrosPorOrden"
+              },
+              {
+                "name": "CantidadTitulosDistintos"
+              },
+              {
+                "name": "CantidadAutores"
+              },
+              {
+                "name": "TotalVentasNetas"
+              },
+              {
+                "name": "VentasPorLibro"
+              },
+              {
+                "name": "LibroMasVendido"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Comparativa Temporal",
+        "tables": [
+          {
+            "name": "DimDate",
+            "columns": [
+              {
+                "name": "Year"
+              },
+              {
+                "name": "Quarter"
+              },
+              {
+                "name": "MonthName"
+              }
+            ]
+          },
+          {
+            "name": "FactOrders",
+            "measures": [
+              {
+                "name": "TotalVentasNetas"
+              },
+              {
+                "name": "VentasAñoAnterior"
+              },
+              {
+                "name": "CrecimientoVentas"
+              },
+              {
+                "name": "PorcentajeCrecimiento"
+              },
+              {
+                "name": "TotalOrdenes"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
