@@ -23,6 +23,8 @@
     </Project>
   </Folder>
   <Folder Name="/OLAP/">
-    <File Path="tmp.txt" />
+    <Project Path="BookStoreOLAP/BookStoreOLAP.smproj" Type="d2abab84-bf74-430a-b69e-9dc6d40dfd6a" Id="b8e4c5d7-9a3f-4e6b-8c2d-1f9a7e5b3d4c">
+      <BuildType Project="Development" />
+    </Project>
   </Folder>
 </Solution>
